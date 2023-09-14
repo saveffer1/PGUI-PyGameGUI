@@ -115,7 +115,6 @@ class Game:
                 sys.exit()            
             if event.type == MOUSEBUTTONDOWN:
                 if event.button == 1:
-                    self.mouse_clicked = True
                     if self.btn_delsave.clicked():
                         Button.clicked_sound(SOUND_BTNCLICK)
                         self.confirm_prompt = YesNoPopup("You sure?", FONT, width=500, height=300)
