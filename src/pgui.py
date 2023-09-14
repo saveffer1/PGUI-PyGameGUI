@@ -165,6 +165,7 @@ class RangeSlider:
         self.show_min_max = show_min_max
         
         self.play_sound_after_drag = False
+        self.drag_sound = None
         
         # Calculate initial thumb position based on start_value
         if start_value is not None:
@@ -209,7 +210,7 @@ class RangeSlider:
             if self.callback:
                 self.callback(self.value)
             if self.play_sound_after_drag:
-                Button.clicked_sound(SOUND_UISELECT)
+                Button.clicked_sound(self.drag_sound)
 
 class ToggleSwitch:
     def __init__(self, x, y, width, height, start_state:bool=False, state_text:bool=False, font: str=None, font_size: int=30, callback=None):
